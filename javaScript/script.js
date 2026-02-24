@@ -107,3 +107,6 @@ function updateCounters() {
         }
     }
 }
+//update UI state on function calls
+updateCounters();
+checkEmptyState();
