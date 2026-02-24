@@ -1,9 +1,8 @@
 *{
   font-family: "Geist", sans-serif;
 }
-.active-tab {
-             background-color: #3b82f6 
-             !important; color: white 
-             !important; border-color: #3b82f6 
-             !important;
+.active-tab{
+  background-color: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
 }
