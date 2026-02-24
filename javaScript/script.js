@@ -84,3 +84,26 @@ function checkEmptyState() {
         placeholder.classList.add('hidden');
     }
 }
+
+//update all, interview, and rejected counts on change
+
+function updateCounters() {
+    const all = document.querySelectorAll('.job-card').length;
+    const interview = document.querySelectorAll('.job-card[data-status="interview"]').length;
+    const rejected = document.querySelectorAll('.job-card[data-status="rejected"]').length;
+
+    if(document.getElementById('total-count')) document.getElementById('total-count').innerText = all;
+    if(document.getElementById('interview-count')) document.getElementById('interview-count').innerText = interview;
+    if(document.getElementById('rejected-count')) document.getElementById('rejected-count').innerText = rejected;
+
+    const headerCount = document.getElementById('header-count');
+    if (headerCount) {
+        if (currentFilter === 'all') {
+            headerCount.innerText = all;
+        } else if (currentFilter === 'interview') {
+            headerCount.innerText = interview;
+        } else if (currentFilter === 'rejected') {
+            headerCount.innerText = rejected;
+        }
+    }
+}
