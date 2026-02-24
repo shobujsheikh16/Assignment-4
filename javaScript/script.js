@@ -40,3 +40,32 @@ function removeJob(id) {
         checkEmptyState();
     }
 }
+
+//job card filtering logic
+
+function filterTab(filter) {
+    currentFilter = filter;
+    
+    document.querySelectorAll('button[id^="btn-"]').forEach(btn => {
+        btn.classList.remove('active-tab');
+        btn.classList.add('bg-white', 'text-gray-500');
+    });
+    const activeBtn = document.getElementById('btn-' + filter);
+    if (activeBtn) {
+        activeBtn.classList.add('active-tab');
+        activeBtn.classList.remove('text-gray-500', 'bg-white');
+    }
+
+
+    document.querySelectorAll('.job-card').forEach(card => {
+        const status = card.getAttribute('data-status');
+        if (filter === 'all' || status === filter) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+
+    updateCounters();
+    checkEmptyState(); 
+}
