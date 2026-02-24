@@ -33,7 +33,7 @@ function setStatus(id, status) {
 //add removeJob function
 
 function removeJob(id) {
-    document.getElementById(id)
+    const card = document.getElementById(id);
     if (card) {
         card.remove();
         updateCounters();
