@@ -69,3 +69,18 @@ function filterTab(filter) {
     updateCounters();
     checkEmptyState(); 
 }
+
+
+//  Show message if empty 
+function checkEmptyState() {
+    const placeholder = document.getElementById('no-jobs-placeholder');
+    if (!placeholder) return;
+    const visibleCards = Array.from(document.querySelectorAll('.job-card'))
+                         .filter(card => card.style.display !== 'none').length;
+
+    if (visibleCards === 0) {
+        placeholder.classList.remove('hidden');
+    } else {
+        placeholder.classList.add('hidden');
+    }
+}
