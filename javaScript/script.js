@@ -28,3 +28,15 @@ function setStatus(id, status) {
     updateCounters();
     checkEmptyState(); 
 }
+
+
+//add removeJob function
+
+function removeJob(id) {
+    document.getElementById(id)
+    if (card) {
+        card.remove();
+        updateCounters();
+        checkEmptyState();
+    }
+}
